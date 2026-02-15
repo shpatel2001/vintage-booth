@@ -10,6 +10,8 @@ body {
     justify-content: center;
     font-family: 'Courier New', Courier, monospace;
     color: var(--wood);
+    margin: 0;
+    padding: 20px;
 }
 
 .booth-shell {
@@ -19,8 +21,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     max-width: 500px;
+    width: 100%;
     text-align: center;
-    margin-top: 50px;
 }
 
 .screen-container {
@@ -33,10 +35,9 @@ body {
 
 #video {
     width: 100%;
-    filter: sepia(0.5) contrast(1.2) brightness(0.9);
+    filter: sepia(0.3) contrast(1.1);
 }
 
-/* Mirror effect for front camera */
 .mirror {
     transform: scaleX(-1);
 }
@@ -46,11 +47,12 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 80px;
+    font-size: 60px;
     color: white;
     font-weight: bold;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
     z-index: 10;
+    pointer-events: none;
 }
 
 .controls {
@@ -62,34 +64,47 @@ body {
 
 button {
     cursor: pointer;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
     font-weight: bold;
     border-radius: 5px;
+    transition: transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
 }
 
 .btn-main {
     background: var(--neon);
     color: white;
-    font-size: 1.2rem;
 }
 
 .btn-secondary {
-    background: #888;
+    background: #555;
     color: white;
 }
 
 #photo-strip {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     background: white;
-    padding: 15px;
+    padding: 20px;
     margin-top: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    max-height: 600px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
 }
 
 #photo-strip img {
     width: 100%;
-    filter: grayscale(100%) contrast(1.5); /* Force B&W for the printed strip */
+    display: block;
+    border: 1px solid #eee;
 }
