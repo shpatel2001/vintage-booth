@@ -1,0 +1,95 @@
+:root {
+    --wood: #3d2b1f;
+    --paper: #f4e4bc;
+    --neon: #ff3e3e;
+}
+
+body {
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--wood);
+}
+
+.booth-shell {
+    background: var(--paper);
+    padding: 30px;
+    border: 15px solid var(--wood);
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    max-width: 500px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.screen-container {
+    position: relative;
+    background: #000;
+    border: 5px solid #222;
+    overflow: hidden;
+    line-height: 0;
+}
+
+#video {
+    width: 100%;
+    filter: sepia(0.5) contrast(1.2) brightness(0.9);
+}
+
+/* Mirror effect for front camera */
+.mirror {
+    transform: scaleX(-1);
+}
+
+#countdown {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    z-index: 10;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-main {
+    background: var(--neon);
+    color: white;
+    font-size: 1.2rem;
+}
+
+.btn-secondary {
+    background: #888;
+    color: white;
+}
+
+#photo-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    padding: 15px;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#photo-strip img {
+    width: 100%;
+    filter: grayscale(100%) contrast(1.5); /* Force B&W for the printed strip */
+}

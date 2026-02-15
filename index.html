@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Photo Booth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="booth-shell">
+        <h1 class="logo">RETRO-SNAP</h1>
+        
+        <div class="screen-container">
+            <div id="countdown"></div>
+            <video id="video" autoplay playsinline class="mirror"></video>
+            <canvas id="canvas" style="display:none;"></canvas>
+        </div>
+
+        <div class="controls">
+            <button id="switch-btn" class="btn-secondary">🔄 Flip</button>
+            <button id="snap-btn" class="btn-main">📸 TAKE PHOTO</button>
+        </div>
+
+        <div id="strip-container">
+            <h3>Your Film Strip</h3>
+            <div id="photo-strip"></div>
+            <button id="download-btn" style="display:none;">Save Strip</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
